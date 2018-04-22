@@ -11,3 +11,5 @@ You can absorb bullets that have same color as you but if you touch another colo
 There are 2 colors and you switch between them when rotating the Tetris brick.
 
 Game difficulty escalates over rows.
+
+![](demo.gif)
