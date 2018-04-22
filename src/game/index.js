@@ -1,12 +1,3 @@
-/* TODO
-HIGH game over screen
-HIGH better particle patterns
-MEDIUM fullscreen button
-MEDIUM particle absorbed effect
-MEDIUM audio (tetris) & gfx
-LOW menu screen
-*/
-
 import * as PIXI from "pixi.js";
 import memoize from "lodash/memoize";
 import Spawner from "entity-spawner";
