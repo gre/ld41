@@ -1,25 +1,14 @@
-export const keys = {};
-export const newKeyDown = {};
+const keys = {};
 for (let k = 0; k < 100; k++) {
   keys[k] = 0;
-  newKeyDown[k] = 0;
 }
 
 export function getUserEvents() {
   let keyRightDelta =
-    (newKeyDown[39] || newKeyDown[68]) -
-    (newKeyDown[37] || newKeyDown[65] || newKeyDown[81]);
-  let keyUpDelta =
-    (newKeyDown[38] || newKeyDown[87] || newKeyDown[90]) -
-    (newKeyDown[40] || newKeyDown[83]);
-  const action1 = newKeyDown[32];
-  const rotateDelta =
-    (newKeyDown[17] || newKeyDown[48]) - (newKeyDown[16] || newKeyDown[49]);
-
-  for (let k = 0; k < 100; k++) {
-    newKeyDown[k] = 0;
-  }
-  return { keyUpDelta, keyRightDelta, rotateDelta, action1 };
+    (keys[39] || keys[68]) - (keys[37] || keys[65] || keys[81]);
+  let keyUpDelta = (keys[38] || keys[87] || keys[90]) - (keys[40] || keys[83]);
+  const rotateDelta = (keys[48] || keys[32]) - keys[49];
+  return { keyUpDelta, keyRightDelta, rotateDelta };
 }
 
 const onKeyUp = (e: *) => {
@@ -27,10 +16,8 @@ const onKeyUp = (e: *) => {
 };
 
 const onKeyDown = (e: *) => {
-  if (e.which === 32) e.preventDefault();
-  console.log(e.which);
+  if ((e.which >= 37 && e.which <= 40) || e.which === 32) e.preventDefault();
   keys[e.which] = 1;
-  newKeyDown[e.which] = 1;
 };
 
 document.body.addEventListener("keyup", onKeyUp);

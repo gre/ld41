@@ -23,7 +23,7 @@ class Game extends Component {
     this.ref = ref;
   };
   render() {
-    return <div ref={this.onRef} />;
+    return <div className="game" ref={this.onRef} />;
   }
 }
 
