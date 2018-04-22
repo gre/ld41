@@ -703,7 +703,7 @@ resources.then(resources => {
         x: p.position.x - this.position.x,
         y: p.position.y - this.position.y
       };
-      return playerPiece.collidesCircle(pr, 2);
+      return playerPiece.collidesCircle(pr, 4);
     }
 
     shapeCollides(x, y, shape) {
