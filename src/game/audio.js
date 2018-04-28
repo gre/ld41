@@ -91,17 +91,6 @@ if (!context) {
     sounds.tetris2Loop.output.gain.value = 0;
   });
 
-  const playLoop = ({ bufferPromise, output }, time) => {
-    const source = context.createBufferSource();
-    source.loop = true;
-    source.connect(output);
-    bufferPromise.then(buffer => {
-      source.buffer = buffer;
-      source.start(0);
-    });
-    return source;
-  };
-
   sync = ({
     volume,
     musicVolume,
